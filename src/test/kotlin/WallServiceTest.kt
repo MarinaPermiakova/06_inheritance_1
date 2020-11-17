@@ -1,0 +1,54 @@
+import org.junit.Assert.*
+import org.junit.Test
+
+class WallServiceTest{
+    @Test
+    fun add() {
+        val post = Post(
+            id = 3,
+            owner_id = 111,
+            from_id = 21,
+            created_by = 22,
+            date = 22,
+            text = "Hello, world!",
+            reply_owner_id = 33,
+            reply_post_id = 33,
+            friends_only = 1,
+            comments = Comments(
+                count = 9845,
+                can_post = false,
+                groups_can_post = true,
+                can_close = true,
+                can_open = true
+            ),
+            copyright = "Piotr",
+            likes = Likes(
+                count = 2,
+                user_likes = true,
+                can_like = true,
+                can_publish = true
+            ),
+            reposts = Reposts(
+                count = 3,
+                user_reposted = false
+            ),
+            views = Views(
+                count = 3458
+            ),
+            post_type = "message",
+            signer_id = 65,
+            can_pin = true,
+            can_delete = true,
+            can_edit = true,
+            is_pinned = true,
+            marked_as_ads = true,
+            is_favorite = true,
+            postponed_id = 44,
+            copy_history = arrayOf(7, 8),
+            post_source = null,
+            geo = null
+        )
+        val result = post.id
+        assertEquals(3, result)
+    }
+}
